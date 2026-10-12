@@ -1,0 +1,324 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #10051f;
+    color: white;
+    overflow: hidden;
+}
+
+.screen {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 25px;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #652b91,
+            #24103f 45%,
+            #10051f 85%
+        );
+}
+
+.hidden {
+    display: none;
+}
+
+.intro-content,
+.gift-content {
+    max-width: 650px;
+    animation: fadeIn 1.5s ease;
+}
+
+.small-text {
+    color: #f6b8ff;
+    letter-spacing: 3px;
+    font-size: 12px;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: clamp(35px, 7vw, 65px);
+    margin-bottom: 20px;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #ffb6f9,
+        #d5b5ff
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.subtitle {
+    font-size: 17px;
+    color: #e6d9f7;
+    margin-bottom: 35px;
+}
+
+button {
+    border: none;
+    padding: 15px 28px;
+    border-radius: 35px;
+
+    background: linear-gradient(
+        90deg,
+        #ff77d9,
+        #b47aff
+    );
+
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 0 25px #d66cff55;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 35px #e79aff99;
+}
+
+.gift-button {
+    font-size: 90px;
+    background: transparent;
+    box-shadow: none;
+    margin: 25px 0;
+    animation: float 2s infinite ease-in-out;
+}
+
+.gift-button:hover {
+    background: transparent;
+    box-shadow: none;
+}
+
+.hint {
+    color: #e6d9f7;
+    font-size: 14px;
+}
+
+.birthday-card {
+    max-width: 520px;
+    width: 100%;
+
+    padding: 35px 25px;
+    border-radius: 25px;
+
+    background: #ffffff12;
+    border: 1px solid #ffffff30;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow: 0 0 50px #bc71ff30;
+
+    animation: fadeIn 1s ease;
+}
+
+.heart {
+    font-size: 55px;
+    animation: heartbeat 1.5s infinite;
+}
+
+.birthday-card h1 {
+    font-size: clamp(28px, 5vw, 42px);
+}
+
+.message {
+    line-height: 1.8;
+    color: #f5eaff;
+    font-size: 15px;
+    margin: 25px 0;
+}
+
+.signature {
+    margin-top: 25px;
+    color: #ffb6f9;
+    font-size: 13px;
+}
+
+.confetti {
+    position: fixed;
+    top: -20px;
+    z-index: 100;
+    pointer-events: none;
+    animation: fall 3s linear forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .birthday-card {
+        padding: 25px 18px;
+    }
+
+    .message {
+        font-size: 14px;
+    }
+}
+/* Birthday Animal Party */
+
+.party-content {
+    width: 100%;
+    max-width: 650px;
+    animation: fadeIn 1s ease;
+}
+
+.party-subtitle {
+    color: #e6d9f7;
+    margin-bottom: 20px;
+}
+
+.animal-stage {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 15px;
+    margin: 25px auto 10px;
+}
+
+.animal {
+    font-size: clamp(55px, 12vw, 85px);
+    animation: animalBounce 1.5s infinite ease-in-out;
+}
+
+.teddy {
+    animation-delay: 0s;
+}
+
+.dog {
+    animation-delay: 0.3s;
+}
+
+.cat {
+    animation-delay: 0.6s;
+}
+
+.cake-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    min-height: 100px;
+    margin: 10px 0;
+}
+
+.cake {
+    font-size: 75px;
+    animation: cakeGlow 2s infinite ease-in-out;
+}
+
+.cake-slice {
+    font-size: 55px;
+    animation: sliceAppear 0.7s ease;
+}
+
+.party-content h2 {
+    color: #ffcbf2;
+    font-size: clamp(21px, 5vw, 30px);
+    margin: 15px 0;
+}
+
+#partyCaption {
+    color: #eee0ff;
+    margin-bottom: 22px;
+}
+
+#feedDishuBtn {
+    margin-top: 10px;
+}
+
+#feedMessage {
+    margin-top: 25px;
+    animation: fadeIn 1s ease;
+}
+
+#feedMessage p {
+    color: #f6e8ff;
+    line-height: 1.8;
+    margin-top: 8px;
+}
+
+@keyframes animalBounce {
+    0%, 100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(5deg);
+    }
+}
+
+@keyframes cakeGlow {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+@keyframes sliceAppear {
+    from {
+        opacity: 0;
+        transform: translateX(-25px) scale(0.6);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
